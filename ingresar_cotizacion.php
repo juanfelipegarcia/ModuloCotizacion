@@ -30,7 +30,7 @@ foreach ($_POST["etapa"] as $Etapa) {
 // echo "La Fecha es: " .$Fecha;
 // echo "<br>";
 $longitudDocumento = strlen($Documento);
-
+$longDireccion = strlen($Direccion);
 
 if ($Cliente!=="" && $Direccion!=="" && $Identificacion!==""  && $TipoConcreto!=="" && $Etapa!=="" && $Telefono!="" && $Fecha!=="" && $longitudDocumento == 10  ) {
 
