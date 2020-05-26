@@ -259,6 +259,7 @@ $(document).ready(function() {
          //celullar
           if($("#telefono").val().length == 0 )
           {
+      
                $("#validacion_cel").text("*");$("#validacion_cel2").text("Debe ingresar # de celular");
           }
           else if ($("#telefono").val().length > 10 || $("#telefono").val().length < 10  ) 
