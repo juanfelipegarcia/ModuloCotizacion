@@ -30,14 +30,15 @@ foreach ($_POST["etapa"] as $Etapa) {
 // echo "La Fecha es: " .$Fecha;
 // echo "<br>";
 $longitudDocumento = strlen($Documento);
-$longDireccion = strlen($Direccion);
+$longitudTelefono = strlen($Telefono);
 
-if ($Cliente!=="" && $Direccion!=="" && $Identificacion!==""  && $TipoConcreto!=="" && $Etapa!=="" && $Telefono!="" && $Fecha!=="" && $longitudDocumento == 10  ) {
+
+if ($Cliente!=="" && $Direccion!=="" && $Identificacion!==""  && $TipoConcreto!=="" && $Etapa!=="" && $Fecha!=="" && $longitudDocumento == 10 && $longitudTelefono == 10  ) {
 
      echo "Regiistro exitoso";
-     echo "<br>";
 
-     echo "longitud  cocumento:" .strlen($Documento);
+
+
 }else {
      echo "no se pudo validar regiistro";
      echo "<br>";
