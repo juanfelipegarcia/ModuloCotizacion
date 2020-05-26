@@ -39,21 +39,43 @@ if ($tipo_archivo!="text/plain")
           echo "<table border='1' align='center'>";
           echo "<thead><th>Indice</th><th>Codigo IATA</th><th>Nombre Aeropuerto</th><th>Id Region</th></thead>";
 
-foreach ($archivo as $indice => $linea) {
+     // foreach ($archivo as $indice => $linea) {
 
-     if (strpos($linea, '|')!== false)
-     {
-          $campos = explode("|", $linea); // convertir a un string  en  un vector
+     // if (strpos($linea, '|')!== false)
+     // {
+     //      $campos = explode("|", $linea); // convertir a un string  en  un vector
+
+     //      $campo1=$campos[0];
+     //      if($campo1[1]=="A")
+     //      {
+     //      echo "<tr>
+     //      <td>$indice</td>
+     //      <td>$campos[0]</td>
+     //      <td>$campos[1]</td>
+     //      <td>$campos[2]</td>
+     //      </tr>";
+     //      }
+
+     // }
+     // }
 
 
+     foreach ($archivo as $indice=>$linea) { 
+          //echo $linea; //mostras la linea
+          $campos= explode("|",$linea); // Convierte una linea en un vector, en este caso por la presencia de |
+          
+          $campo1=$campos[1];
+          if($campo1[0]=="A" || $campo1[0]=="E" || $campo1[0]=="I" || $campo1[0]=="O" || $campo1[0]=="U")
+          { 
           echo "<tr>
           <td>$indice</td>
           <td>$campos[0]</td>
           <td>$campos[1]</td>
           <td>$campos[2]</td>
           </tr>";
-     }
-}
+          } 
+          error_reporting(0);
+      }
 
 echo "</table>";
      }
