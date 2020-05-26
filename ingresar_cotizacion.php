@@ -41,8 +41,8 @@ if ($Cliente!=="" && $Direccion!=="" && $Identificacion!==""  && $TipoConcreto!=
 
 }else {
      echo "no se pudo validar regiistro";
-     echo "<br>";
-     echo "longitud  cocumento:" .strlen($Documento);
+//      echo "<br>";
+//      echo "longitud  cocumento:" .strlen($Documento);
 }
 
 

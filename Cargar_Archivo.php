@@ -4,11 +4,30 @@ $nombre_archivo = $_FILES["nombrearchivo"]["name"];
 $tipo_archivo = $_FILES["nombrearchivo"]["type"];
 $tamano_archivo = $_FILES["nombrearchivo"]["size"];
 
+echo "<table border='1' align='center'>";
+echo "<thead><th>Tipo</th><th>Descripcion</th></thead>";
 
-echo "Nombre del archivo: ".$nombre_archivo."<br>";
-echo "Tipo del archivo: ".$tipo_archivo."<br>";
-echo "Tamaño del archivo: ".$tamano_archivo."<br>";
+     echo "<tr>
+     <td>Nombre del archivo </td>
+     <td>$nombre_archivo</td>
+     </tr>";
 
+     echo "<tr>
+     <td>Tipo del archivo </td>
+     <td>$tipo_archivo</td>
+     </tr>";
+
+     echo "<tr>
+     <td>Tamaño del archivo </td>
+     <td>$tamano_archivo</td>
+     </tr>";
+
+// echo "Nombre del archivo: ".$nombre_archivo."<br>";
+// echo "Tipo del archivo: ".$tipo_archivo."<br>";
+// echo "Tamaño del archivo: ".$tamano_archivo."<br>";
+
+echo "<br>";
+echo "<br>";
 
 if ($tipo_archivo!="text/plain")
 {

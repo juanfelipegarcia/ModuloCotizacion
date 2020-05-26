@@ -150,7 +150,7 @@ $(document).ready(function(){
 
           $("input").val("");
           $("select").val("0");
-          $("input[name='etapa']").prop('checked',false);
+          $("input[name='etapa[]']").prop('checked',false);
 
           $("#validacion_cliente").text("");$("#validacion_cliente2").text("");
           $("#validacion_direccion").text("");$("#validacion_direccion2").text("");
@@ -271,29 +271,52 @@ $(document).ready(function() {
                validado++;
           }
 
-
-          if ($("#fecha").val().length == 0 ) {
-          $("#validacion_f").text("*");$("#validacion_f2").text("Debes seleccionar  una fecha");
-          }else{
-          $("#validacion_f").text("");$("#validacion_f2").text("");
-               validado++;
-
-          }
-
-         //fecha
           let fecha_actual = new Date();
           let fecha_inicioobra =  new Date($("#fecha").val())
-          if (fecha_inicioobra==fecha_actual || fecha_inicioobra<fecha_actual ) 
-          {
+          if ($("#fecha").val().length == 0 ) {
+          $("#validacion_f").text("*");$("#validacion_f2").text("Debes seleccionar  una fecha");
+          }else if (fecha_actual>fecha_inicioobra) {
                $("#validacion_fecha").text("*");$("#validacion_fecha2").text("La  fecha de inicio de obra  debe ser mayor al dia de  hoy");
-          }
-          else
-          {
-               $("#validacion_fecha").text("");$("#validacion_fecha2").text("");
+          }else if(fecha_actual==fecha_inicioobra){
+               alert('La fecha de visita no puede ser igual que la fecha actual');
+          }else{
+          $("#validacion_f").text("");$("#validacion_f2").text("");
+          $("#validacion_fecha").text("");$("#validacion_fecha2").text("");
                validado++;
+
           }
 
-          if (validado==9) 
+
+     //      var fecha_actual =new Date();
+     //    var fecha_v = new Date ($("#fechaV").val());
+  
+     //    if ($("#fechaV").val().length == 0 ){
+     //        $("#validacion_fvisita").text("*");
+     //    }else if(fecha_actual> fecha_v){
+     //        $("#validacion_fvisita").text("*");
+     //    alert('La fecha de visita debe ser mayor a la fecha actual');
+     //     }else if(fecha_actual==fecha_v){
+     //    alert('La fecha de visita no puede ser igual que la fecha actual');
+     //    }
+     //    else{
+     //        $("#validacion_fvisita").text("");
+     //        validado++;
+     //    }
+
+     //     //fecha
+     //      let fecha_actual = new Date();
+     //      let fecha_inicioobra =  new Date($("#fecha").val())
+     //      if (fecha_inicioobra==fecha_actual || fecha_inicioobra<fecha_actual ) 
+     //      {
+     //           $("#validacion_fecha").text("*");$("#validacion_fecha2").text("La  fecha de inicio de obra  debe ser mayor al dia de  hoy");
+     //      }
+     //      else
+     //      {
+     //           $("#validacion_fecha").text("");$("#validacion_fecha2").text("");
+     //           validado++;
+     //      }
+
+          if (validado==8) 
           {
           //     Swal.fire('Registro exitoso')
 
@@ -311,7 +334,7 @@ $(document).ready(function() {
 
                $("input").val("");
                $("select").val("0");
-               $("input[name='etapa']").prop('checked',false);
+               $("input[name='etapa[]']").prop('checked',false);
 
                $("#validacion_cliente").text("");$("#validacion_cliente2").text("");
                $("#validacion_direccion").text("");$("#validacion_direccion2").text("");
