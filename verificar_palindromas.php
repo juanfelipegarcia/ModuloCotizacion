@@ -1,7 +1,13 @@
 <?php
+
 date_default_timezone_set("UTC");
 
 $Texto = $_POST["texto"];
+
+if ($Texto!=="") {
+     echo "los datos del texto son:";
+     echo "<br>";
+     
 echo "El texto es : ".$Texto;
 echo "<br>";
 
@@ -9,10 +15,10 @@ $fraseInvertida = strrev($Texto);
 
 if ( $Texto == $fraseInvertida)
 {
-    echo "la palabra es PALINDROMA.";
+    echo "El texto es PALINDROMO.";
 }
 else{
-    echo "la palabra NO es PALINDROMA";
+    echo "El texto NO es PALINDROMO";
 }
 echo "<br>";
 
@@ -41,7 +47,7 @@ function contarVocales($cadena)
 }
 
 $cantidadVocales = contarVocales($Texto);
-echo "numero vocales es: " . $cantidadVocales;
+echo "numero vocales en el texto es: " . $cantidadVocales;
 echo "<br>";
 
 $Mayusculas = strtoupper($Texto);
@@ -63,5 +69,12 @@ echo "<br>";
 
 echo "La Fecha del sistema es : " . date('d-m-Y');
 echo "<br>";
+
+}else {
+     echo "No se encuentra TEXTO para analizar";
+
+}
+
+
 
 ?>

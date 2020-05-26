@@ -168,6 +168,7 @@ $(document).ready(function(){
           $("#validacion_fecha").text("");$("#validacion_fecha2").text("");
           $("#validacion_condiciones").text("");
           $("#RtaCotizacion").text("");
+          $("#RtaTexto").text("");
 
      });
 });
@@ -366,3 +367,30 @@ $(document).ready(function() {
           // }
      });
 });
+
+$(document).ready(function() {
+     $("#FrmFormulario1").submit(function(event){
+          event.preventDefault();
+
+          if ($("#texto").val().length==0 ) {
+               alert(" No se ingreso Texto para  analisis");
+              
+          }
+          else
+          {
+               // document.FrmPersona.submit();
+               var url = "verificar_palindromas.php";
+               $.ajax({
+                    type: "POST",
+                    url: url,
+                    data: $("#FrmFormulario1").serialize(),
+                    success: function(data)
+                    {
+                         $("#RtaTexto").html(data);
+                    }
+
+               });
+          }
+     });
+});
+
