@@ -370,25 +370,6 @@ $(document).ready(function() {
           }
 
 
-          // if ($("#cliente").val().length==0 || $("#direccion").val().length==0 || $("#identificacion").val().length==0 || $("#documento").val().length==0 || $("#tipo_concreto").val().length==0 || $("#telefono").val().length==0 || $("#fecha").val().length==0 || $("input[name='etapa']").is(':checked')) {
-          //      alert("Todo los campos son obligatorios **");
-              
-          // }
-          // else
-          // {
-          //      // document.FrmPersona.submit();
-          //      var url = "ingresar_cotizacion.php";
-          //      $.ajax({
-          //           type: "POST",
-          //           url: url,
-          //           data: $("#FrmCotizacion").serialize(),
-          //           success: function(data)
-          //           {
-          //                $("#RtaCotizacion").html(data);
-          //           }
-
-          //      });
-          // }
      });
 });
 
